@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG按钮悬浮效果</title>
+  <style>
+    svg {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    svg:hover {
+      transform: scale(1.2);
+    }
+    .button {
+      fill: #3D73F5;
+      transition: fill 0.3s ease;
+    }
+    svg:hover .button {
+      fill: #3361cd;
+    }
+  </style>
+</head>
+<body>
+<svg id="rectSvg" width="200" height="100" viewBox="0 0 200 100">
+  <rect class="button" x="10" y="10" width="180" height="80" rx="20" ry="20"/>
+  <text id="label" x="100" y="60" font-size="30" text-anchor="middle" fill="#ecf0f1">按钮</text>
+</svg>
+<script>
+  document.getElementById('rectSvg').addEventListener('click', function() {
+    const label = document.getElementById('label');
+    // 更改矩形的颜色
+    label.setAttribute('fill', '#2ecc71');
+    // 更改文本内容
+    label.textContent = "已点击";
+  });
+</script>
+</body>
+</html>
